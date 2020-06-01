@@ -5,6 +5,7 @@ module com.ak.fx.desktop {
   requires java.desktop;
   requires spring.boot;
   requires spring.boot.autoconfigure;
+  requires spring.context;
 
   opens com.ak.fx.desktop to spring.core;
 

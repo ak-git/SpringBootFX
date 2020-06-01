@@ -1,12 +1,10 @@
 plugins {
     id 'java'
     id 'java-library'
-    id "org.javamodularity.moduleplugin" version "1.5.0"
     id 'idea'
 
     id "application"
     id 'org.openjfx.javafxplugin' version '0.0.8'
-    id "org.beryx.jlink" version "2.19.0"
 
     id 'org.springframework.boot' version '2.3.0.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
@@ -41,7 +39,6 @@ allprojects {
 
     apply plugin: 'java'
     apply plugin: 'java-library'
-    apply plugin: 'org.javamodularity.moduleplugin'
 
     sourceCompatibility = javaVersion
     targetCompatibility = javaVersion
@@ -79,10 +76,3 @@ javafx {
 }
 
 mainClassName = "com.ak.fx.desktop.FxApplication"
-
-jlink {
-    options = ['--bind-services', '--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
-    launcher {
-        name = 'com.ak.fx.desktop'
-    }
-}
