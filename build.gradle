@@ -1,0 +1,88 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id "org.javamodularity.moduleplugin" version "1.5.0"
+    id 'idea'
+
+    id "application"
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id "org.beryx.jlink" version "2.19.0"
+
+    id 'org.springframework.boot' version '2.3.0.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+}
+
+ext {
+    testNG = 'org.testng:testng:7.1.0'
+    jsr305 = 'com.google.code.findbugs:jsr305:3.0.2'
+    javax_inject = 'javax.inject:javax.inject:1'
+    javaVersion = JavaVersion.VERSION_14
+}
+
+wrapper {
+    description 'Setup the Gradle wrapper'
+    gradleVersion = "6.4.1"
+    distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
+}
+
+allprojects {
+    group = 'com.ak'
+    version = '2020.06.00'
+    apply plugin: 'idea'
+    idea {
+        module {
+            inheritOutputDirs = true
+        }
+    }
+
+    sourceSets {
+        main.output.resourcesDir = main.java.outputDir
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'org.javamodularity.moduleplugin'
+
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven {
+            url = 'https://plugins.gradle.org/m2/'
+        }
+        jcenter()
+    }
+
+    dependencies {
+        implementation jsr305
+        testImplementation testNG
+    }
+
+    test {
+        forkEvery = 5
+        useTestNG()
+        maxHeapSize = '1G'
+    }
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter') {
+        exclude group: 'jakarta.annotation', module: 'jakarta.annotation-api'
+    }
+}
+
+javafx {
+    version = '14'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+mainClassName = "com.ak.fx.desktop.FxApplication"
+
+jlink {
+    options = ['--bind-services', '--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'com.ak.fx.desktop'
+    }
+}

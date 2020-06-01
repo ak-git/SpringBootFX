@@ -1,0 +1,13 @@
+
+# Default ignored files
+/shelf/
+/sonarlint/
+sonarlint-state.xml
+/rAvailablePackageCache.xml
+/rGraphicsSettings.xml
+/rpackages.xml
+/rSettings.xml
+/workspace.xml
+/modules.xml
+/libraries/*
+*.iml
