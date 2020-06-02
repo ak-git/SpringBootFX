@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="SpringBootFX" type="Application" factoryName="Application">
+  <configuration default="false" name="SpringBootFX-DefaultProfile" type="Application" factoryName="Application">
     <option name="ALTERNATIVE_JRE_PATH" value="13" />
     <option name="MAIN_CLASS_NAME" value="com.ak.fx.desktop.FxApplication" />
     <module name="SpringBootFX.main" />

@@ -2,6 +2,8 @@ spring:
   main:
     web-application-type: none
     banner-mode: off
+  profiles:
+    active: nmi
 logging:
   level:
     org:

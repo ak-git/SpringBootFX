@@ -6,8 +6,10 @@ import javax.inject.Named;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.annotation.Profile;
 
-@Named("Aper")
+@Named
+@Profile("aper")
 public final class AperApplicationRunner implements ApplicationRunner {
   @Override
   public void run(ApplicationArguments args) {
