@@ -65,7 +65,11 @@ allprojects {
 }
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter') {
+    implementation 'org.springframework.boot:spring-boot-starter'
+}
+
+configurations {
+    all {
         exclude group: 'jakarta.annotation', module: 'jakarta.annotation-api'
     }
 }
