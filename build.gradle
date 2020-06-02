@@ -13,7 +13,7 @@ plugins {
 ext {
     testNG = 'org.testng:testng:7.1.0'
     jsr305 = 'com.google.code.findbugs:jsr305:3.0.2'
-    javax_inject = 'javax.inject:javax.inject:1'
+    javaxInject = 'javax.inject:javax.inject:1'
     javaVersion = JavaVersion.VERSION_14
 }
 
@@ -25,7 +25,7 @@ wrapper {
 
 allprojects {
     group = 'com.ak'
-    version = '2020.06.00'
+    version = '2020.06.02'
     apply plugin: 'idea'
     idea {
         module {
@@ -65,7 +65,7 @@ allprojects {
 }
 
 dependencies {
-    implementation javax_inject
+    implementation javaxInject
     implementation 'org.springframework.boot:spring-boot-starter'
 }
 
