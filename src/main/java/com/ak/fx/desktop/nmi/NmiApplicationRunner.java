@@ -1,5 +1,7 @@
 package com.ak.fx.desktop.nmi;
 
+import java.util.logging.Logger;
+
 import javax.inject.Named;
 
 import org.springframework.boot.ApplicationArguments;
@@ -9,6 +11,6 @@ import org.springframework.boot.ApplicationRunner;
 public final class NmiApplicationRunner implements ApplicationRunner {
   @Override
   public void run(ApplicationArguments args) {
-    System.out.println("NmiApplicationRunner.run");
+    Logger.getLogger(getClass().getName()).info("AperApplicationRunner.run");
   }
 }
