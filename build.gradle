@@ -65,6 +65,7 @@ allprojects {
 }
 
 dependencies {
+    implementation javax_inject
     implementation 'org.springframework.boot:spring-boot-starter'
 }
 
