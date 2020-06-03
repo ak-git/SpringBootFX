@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <BorderPane>
     <top>
-        <Label text="Page Title"/>
+        <Label text="%label.title"/>
     </top>
     <center>
-        <Label text="Some data here"/>
+        <Label text="%label.center"/>
     </center>
 </BorderPane>
