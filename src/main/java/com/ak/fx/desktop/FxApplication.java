@@ -1,6 +1,7 @@
 package com.ak.fx.desktop;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import javax.annotation.Nonnull;
@@ -17,7 +18,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class FxApplication extends Application {
-  private static final String SCENE_XML = "scene.fxml";
   private static final String KEY_PROPERTIES = "keys";
   private ConfigurableApplicationContext applicationContext;
 
@@ -32,7 +32,8 @@ public class FxApplication extends Application {
 
   @Override
   public void start(@Nonnull Stage primaryStage) throws IOException {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(SCENE_XML),
+    String profile = Arrays.stream(applicationContext.getEnvironment().getActiveProfiles()).findFirst().orElse("default");
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(String.join(".", profile, "fxml")),
         ResourceBundle.getBundle(String.join(".", getClass().getPackageName(), KEY_PROPERTIES)));
     fxmlLoader.setControllerFactory(applicationContext::getBean);
 

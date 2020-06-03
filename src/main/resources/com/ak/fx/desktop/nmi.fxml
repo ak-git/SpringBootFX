@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane fx:controller="com.ak.fx.desktop.nmi.NmiFxController" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <Label text="%label.title.nmi"/>
+    </top>
+    <center>
+        <Button fx:id="buttonCenter" onAction="#action" text="%label.center"/>
+    </center>
+</BorderPane>
