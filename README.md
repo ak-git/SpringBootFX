@@ -25,3 +25,4 @@ logging:
   ```
   build/distributions/SpringBootFX-boot-2020.06.03.zip
   ```
+https://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/reference/htmlsingle/#boot-features
