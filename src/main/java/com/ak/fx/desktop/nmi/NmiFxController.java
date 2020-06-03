@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Profile;
 @Profile("nmi")
 public final class NmiFxController {
   @FXML
-  public Button buttonCenter;
+  private Button buttonCenter;
 
   public void action(ActionEvent actionEvent) {
     Logger.getLogger(getClass().getName()).info(actionEvent.toString());

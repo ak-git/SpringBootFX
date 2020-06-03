@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Profile;
 @Profile("aper")
 public final class AperFxController {
   @FXML
-  public Button buttonCenter;
+  private Button buttonCenter;
 
   public void action(ActionEvent actionEvent) {
     Logger.getLogger(getClass().getName()).info(actionEvent.toString());

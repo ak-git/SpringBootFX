@@ -10,5 +10,5 @@ import org.springframework.context.annotation.Profile;
 @Profile("default")
 public final class DefaultFxController {
   @FXML
-  public Label title;
+  private Label title;
 }
