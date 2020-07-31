@@ -45,7 +45,7 @@ public class FxApplication extends Application {
 
   @Override
   public void stop() {
-    applicationContext.stop();
+    applicationContext.close();
     Platform.exit();
   }
 }
