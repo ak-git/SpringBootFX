@@ -5,7 +5,7 @@
     <module name="SpringBootFX.main" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="com.ak.fx.desktop.*" />
+        <option name="PATTERN" value="com.ak.fx.core.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

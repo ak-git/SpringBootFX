@@ -1,21 +1,23 @@
 package com.ak.fx.desktop.nmi;
 
-import java.util.logging.Logger;
-
+import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import javax.inject.Named;
 
-import javafx.event.ActionEvent;
+import com.ak.fx.core.Service;
+import com.ak.fx.desktop.AbstractFxController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import org.springframework.context.annotation.Profile;
 
 @Named
 @Profile("nmi")
-public final class NmiFxController {
+public final class NmiFxController extends AbstractFxController {
   @FXML
   private Button buttonCenter;
 
-  public void action(ActionEvent actionEvent) {
-    Logger.getLogger(getClass().getName()).info(actionEvent.toString());
+  @Inject
+  public NmiFxController(@Nonnull Service service) {
+    super(service);
   }
 }

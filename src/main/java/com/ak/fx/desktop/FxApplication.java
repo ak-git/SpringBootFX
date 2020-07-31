@@ -15,8 +15,10 @@ import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = "com.ak.fx")
 public class FxApplication extends Application {
   private static final String KEY_PROPERTIES = "keys";
   private ConfigurableApplicationContext applicationContext;
