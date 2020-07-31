@@ -8,3 +8,5 @@ logging:
   level:
     org:
       springframework: info
+  file:
+    name: spring.log
