@@ -9,6 +9,7 @@ module com.ak.fx.desktop {
   requires spring.boot.autoconfigure;
   requires spring.context;
   requires spring.core;
+  requires spring.beans;
 
   opens com.ak.fx.desktop to spring.core, javafx.fxml;
   opens com.ak.fx.desktop.nmi to javafx.fxml;
