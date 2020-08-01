@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Scope;
 
 @Named
 @Profile("default")
-@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public final class DefaultService implements Service {
   @Override
   public void serve() {
