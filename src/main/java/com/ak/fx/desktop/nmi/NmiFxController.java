@@ -8,8 +8,10 @@ import com.ak.fx.core.Service;
 import com.ak.fx.desktop.AbstractFxController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import org.springframework.context.annotation.Profile;
 
 @Named
+@Profile("nmi")
 public final class NmiFxController extends AbstractFxController {
   @FXML
   private Button buttonCenter;

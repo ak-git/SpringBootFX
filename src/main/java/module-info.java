@@ -11,10 +11,11 @@ module com.ak.fx.desktop {
   requires spring.core;
   requires spring.beans;
 
+  opens com.ak.fx.core to spring.core;
   opens com.ak.fx.desktop to spring.core, javafx.fxml;
   opens com.ak.fx.desktop.nmi to javafx.fxml;
   opens com.ak.fx.desktop.aper to javafx.fxml;
-  exports com.ak.fx.core to spring.beans;
+  exports com.ak.fx.core to spring.context, spring.beans;
   exports com.ak.fx.desktop.aper to spring.beans, javafx.fxml;
   exports com.ak.fx.desktop.nmi to spring.beans, javafx.fxml;
   exports com.ak.fx.desktop;

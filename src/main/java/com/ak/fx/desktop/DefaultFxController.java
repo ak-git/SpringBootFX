@@ -10,8 +10,10 @@ import javax.inject.Provider;
 import com.ak.fx.core.Service;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import org.springframework.context.annotation.Profile;
 
 @Named
+@Profile("default")
 public final class DefaultFxController extends AbstractFxController {
   @FXML
   private Label title;

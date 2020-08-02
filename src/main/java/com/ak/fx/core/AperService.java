@@ -2,15 +2,18 @@ package com.ak.fx.core;
 
 import java.util.logging.Logger;
 
-import javax.inject.Named;
+import javax.annotation.Nonnull;
 
-import org.springframework.context.annotation.Profile;
-
-@Named
-@Profile("aper")
 public final class AperService implements Service {
+  @Nonnull
+  private final String msg;
+
+  public AperService(@Nonnull String msg) {
+    this.msg = msg;
+  }
+
   @Override
   public void serve() {
-    Logger.getLogger(getClass().getName()).info("AperService.serve");
+    Logger.getLogger(getClass().getName()).info("AperService.serve " + msg);
   }
 }
