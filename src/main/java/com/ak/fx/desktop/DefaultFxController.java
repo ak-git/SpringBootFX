@@ -21,7 +21,7 @@ public final class DefaultFxController extends AbstractFxController {
   @Inject
   DefaultFxController(@Nonnull Provider<Service> serviceProvider) {
     super(serviceProvider.get());
-    Logger.getLogger(getClass().getName()).info(serviceProvider.get().toString());
-    Logger.getLogger(getClass().getName()).info(serviceProvider.get().toString());
+    Logger.getLogger(getClass().getName()).info(() -> serviceProvider.get().toString());
+    Logger.getLogger(getClass().getName()).info(() -> serviceProvider.get().toString());
   }
 }

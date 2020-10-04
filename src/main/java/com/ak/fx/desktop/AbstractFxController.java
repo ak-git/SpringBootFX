@@ -15,7 +15,7 @@ public abstract class AbstractFxController {
   }
 
   public void action(ActionEvent actionEvent) {
-    Logger.getLogger(getClass().getName()).info(actionEvent.toString());
+    Logger.getLogger(getClass().getName()).info(() -> actionEvent.toString());
     service.serve();
   }
 }
