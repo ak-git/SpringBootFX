@@ -19,13 +19,13 @@ ext {
 
 wrapper {
     description 'Setup the Gradle wrapper'
-    gradleVersion = "6.6.1"
+    gradleVersion = "6.7"
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 allprojects {
     group = 'com.ak'
-    version = '2020.10.04'
+    version = '2020.10.23'
     apply plugin: 'idea'
     idea {
         module {
