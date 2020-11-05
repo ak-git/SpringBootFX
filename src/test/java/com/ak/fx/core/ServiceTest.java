@@ -23,23 +23,21 @@ class ServiceTest {
         comPort.addDataListener(new SerialPortDataListener() {
           @Override
           public int getListeningEvents() {
-            return SerialPort.LISTENING_EVENT_DATA_AVAILABLE;
+            return SerialPort.LISTENING_EVENT_DATA_RECEIVED;
           }
 
           @Override
           public void serialEvent(SerialPortEvent event) {
-            if (event.getEventType() == SerialPort.LISTENING_EVENT_DATA_AVAILABLE) {
-              byte[] newData = new byte[comPort.bytesAvailable()];
-              int numRead = comPort.readBytes(newData, newData.length);
-              if (numRead > 0) {
-                Logger.getLogger(getClass().getName()).info(Arrays.toString(newData));
-                latch.countDown();
-              }
+            if (event.getEventType() == SerialPort.LISTENING_EVENT_DATA_RECEIVED) {
+              byte[] newData = event.getReceivedData();
+              Logger.getLogger(getClass().getName()).info("%s : %s".formatted(event.getSerialPort(), Arrays.toString(newData)));
+              latch.countDown();
             }
           }
         });
 
-        comPort.writeBytes(new byte[] {1, 2}, 2);
+        byte[] buffer = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        comPort.writeBytes(buffer, buffer.length);
         try {
           latch.await(1, TimeUnit.SECONDS);
         }

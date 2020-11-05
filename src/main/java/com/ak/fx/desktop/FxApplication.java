@@ -13,7 +13,6 @@ import javax.annotation.Nonnull;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -48,8 +47,7 @@ public class FxApplication extends Application {
 
     for (int i = 0; i < stages.size(); i++) {
       Stage stage = stages.get(i);
-      Scene scene = fxmlLoaders.get(i).load();
-      stage.setScene(scene);
+      stage.setScene(fxmlLoaders.get(i).load());
       stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
       stage.show();
       stage.centerOnScreen();
