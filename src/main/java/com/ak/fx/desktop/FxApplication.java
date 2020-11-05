@@ -2,16 +2,21 @@ package com.ak.fx.desktop;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import javax.annotation.Nonnull;
 
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -31,21 +36,51 @@ public class FxApplication extends Application {
   }
 
   @Override
-  public void start(@Nonnull Stage primaryStage) throws IOException {
-    String profile = Arrays.stream(applicationContext.getEnvironment().getActiveProfiles()).findFirst().orElse("default");
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(String.join(".", profile, "fxml")),
-        ResourceBundle.getBundle(String.join(".", getClass().getPackageName(), KEY_PROPERTIES)));
-    fxmlLoader.setControllerFactory(applicationContext::getBean);
+  public final void start(@Nonnull Stage mainStage) throws IOException {
+    ResourceBundle resourceBundle = ResourceBundle.getBundle(String.join(".", getClass().getPackageName(), KEY_PROPERTIES));
+    List<FXMLLoader> fxmlLoaders = getFXMLLoader(resourceBundle);
+    List<Stage> stages = Stream
+        .concat(
+            Stream.of(mainStage),
+            IntStream.range(1, fxmlLoaders.size()).mapToObj(i -> new Stage(StageStyle.DECORATED))
+        )
+        .collect(Collectors.toUnmodifiableList());
 
-    Parent parent = fxmlLoader.load();
-    primaryStage.setScene(new Scene(parent, 800, 600));
-    primaryStage.show();
-    primaryStage.centerOnScreen();
+    for (int i = 0; i < stages.size(); i++) {
+      Stage stage = stages.get(i);
+      Scene scene = fxmlLoaders.get(i).load();
+      stage.setScene(scene);
+      stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+      stage.show();
+      stage.centerOnScreen();
+    }
   }
 
   @Override
   public void stop() {
     applicationContext.close();
     Platform.exit();
+  }
+
+  private List<FXMLLoader> getFXMLLoader(@Nonnull ResourceBundle resourceBundle) {
+    String[] profiles = applicationContext.getEnvironment().getActiveProfiles();
+    if (profiles.length == 0) {
+      profiles = applicationContext.getEnvironment().getDefaultProfiles();
+    }
+    FXMLLoader defaultFxmlLoader = new FXMLLoader(getClass().getResource(String.join(".", "default", "fxml")),
+        resourceBundle);
+    List<FXMLLoader> fxmlLoaders = Arrays.stream(profiles)
+        .map(profile -> getClass().getResource(String.join(".", profile, "fxml")))
+        .map(fxml -> {
+          if (fxml == null) {
+            return defaultFxmlLoader;
+          }
+          else {
+            return new FXMLLoader(fxml, resourceBundle);
+          }
+        })
+        .collect(Collectors.toUnmodifiableList());
+    fxmlLoaders.forEach(fxmlLoader -> fxmlLoader.setControllerFactory(applicationContext::getBean));
+    return fxmlLoaders;
   }
 }

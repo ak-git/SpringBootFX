@@ -2,8 +2,12 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane fx:controller="com.ak.fx.desktop.aper.AperFxController" xmlns:fx="http://javafx.com/fxml/1">
-    <center>
-        <Button fx:id="buttonCenter" onAction="#action" text="%label.center.aper"/>
-    </center>
-</BorderPane>
+<?import javafx.scene.Scene?>
+<Scene fx:controller="com.ak.fx.desktop.aper.AperFxController" xmlns:fx="http://javafx.com/fxml/1" width="800"
+       height="600">
+    <BorderPane>
+        <center>
+            <Button fx:id="buttonCenter" onAction="#action" text="%label.center.aper"/>
+        </center>
+    </BorderPane>
+</Scene>

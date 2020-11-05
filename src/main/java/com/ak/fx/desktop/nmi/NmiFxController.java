@@ -4,7 +4,7 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.ak.fx.core.Service;
+import com.ak.fx.core.NmiService;
 import com.ak.fx.desktop.AbstractFxController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -17,7 +17,7 @@ public final class NmiFxController extends AbstractFxController {
   private Button buttonCenter;
 
   @Inject
-  public NmiFxController(@Nonnull Service service) {
-    super(service);
+  public NmiFxController(@Nonnull NmiService serviceProvider) {
+    super(serviceProvider);
   }
 }

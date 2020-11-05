@@ -1,5 +1,6 @@
 package com.ak.fx.core;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.annotation.Nonnull;
@@ -14,6 +15,6 @@ public final class AperService implements Service {
 
   @Override
   public void serve() {
-    Logger.getLogger(getClass().getName()).info("AperService.serve " + msg);
+    Logger.getLogger(getClass().getName()).log(Level.INFO, () -> "AperService.serve %s".formatted(msg));
   }
 }

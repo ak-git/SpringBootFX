@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane fx:controller="com.ak.fx.desktop.DefaultFxController" xmlns:fx="http://javafx.com/fxml/1">
-    <top>
-        <Label fx:id="title" text="%label.title"/>
-    </top>
-    <center>
-        <Label text="%label.center"/>
-    </center>
-</BorderPane>
+<?import javafx.scene.Scene?>
+<Scene fx:controller="com.ak.fx.desktop.DefaultFxController" xmlns:fx="http://javafx.com/fxml/1" width="800"
+       height="600">
+    <BorderPane>
+        <top>
+            <Label fx:id="title" text="%label.title"/>
+        </top>
+        <center>
+            <Label text="%label.center"/>
+        </center>
+    </BorderPane>
+</Scene>
