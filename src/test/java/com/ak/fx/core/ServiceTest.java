@@ -15,6 +15,7 @@ class ServiceTest {
   @Test
   void serve() {
     Arrays.stream(SerialPort.getCommPorts()).forEach(comPort -> {
+      Logger.getLogger(getClass().getName()).info("[%s] %s".formatted(comPort.getSystemPortName(), comPort.getDescriptivePortName()));
       comPort.setBaudRate(115200);
       comPort.setFlowControl(SerialPort.FLOW_CONTROL_DISABLED);
       CountDownLatch latch = new CountDownLatch(1);
