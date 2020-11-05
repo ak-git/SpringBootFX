@@ -11,9 +11,9 @@ plugins {
 }
 
 ext {
-    testNG = 'org.testng:testng:7.3.0'
     jsr305 = 'com.google.code.findbugs:jsr305:3.0.2'
     javaxInject = 'javax.inject:javax.inject:1'
+    jSerialComm = 'com.fazecast:jSerialComm:[2.0.0,3.0.0)'
     javaVersion = JavaVersion.VERSION_15
 }
 
@@ -54,19 +54,20 @@ allprojects {
 
     dependencies {
         implementation jsr305
-        testImplementation testNG
     }
 
     test {
-        forkEvery = 5
-        useTestNG()
-        maxHeapSize = '1G'
+        useJUnitPlatform()
     }
 }
 
 dependencies {
     implementation javaxInject
+    implementation jSerialComm
     implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
 }
 
 configurations {
