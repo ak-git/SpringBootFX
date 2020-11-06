@@ -10,6 +10,7 @@ module com.ak.fx.desktop {
   requires spring.context;
   requires spring.core;
   requires spring.beans;
+  requires com.fazecast.jSerialComm;
 
   opens com.ak.fx.core to spring.core;
   opens com.ak.fx.desktop to spring.core, javafx.fxml;

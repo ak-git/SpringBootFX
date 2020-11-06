@@ -9,5 +9,8 @@
         <center>
             <Button fx:id="buttonCenter" onAction="#action" text="%label.center.aper"/>
         </center>
+        <bottom>
+            <Button onAction="#close" text="close"/>
+        </bottom>
     </BorderPane>
 </Scene>
