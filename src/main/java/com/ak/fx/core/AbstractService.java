@@ -8,7 +8,9 @@ import com.fazecast.jSerialComm.SerialPortDataListener;
 import com.fazecast.jSerialComm.SerialPortEvent;
 
 public abstract class AbstractService implements Service {
-  private final SerialPort comPort = SerialPort.getCommPorts()[0];
+  private final SerialPort comPort = Arrays.stream(SerialPort.getCommPorts())
+      .filter(serialPort -> serialPort.getSystemPortName().toLowerCase().contains("serial"))
+      .findFirst().orElseThrow();
 
   @Override
   public final void serve() {
