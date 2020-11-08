@@ -24,8 +24,8 @@ logging:
   
   Output zip with single JAR appers after Gradle build task:
   ```
-  build/install/SpringBootFX-boot
+  build/distributions/SpringBootFX-boot
   ```
-https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-documentation
+[Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-documentation)
 
-https://spring-projects.ru/guides/lessons/lesson-2/
+[Spring guides](https://spring-projects.ru/guides/lessons/lesson-2/)
