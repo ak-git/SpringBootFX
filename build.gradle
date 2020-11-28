@@ -6,7 +6,7 @@ plugins {
     id "application"
     id 'org.openjfx.javafxplugin' version '0.0.9'
 
-    id 'org.springframework.boot' version '2.3.5.RELEASE'
+    id 'org.springframework.boot' version '2.4.0'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 }
 
@@ -19,13 +19,13 @@ ext {
 
 wrapper {
     description 'Setup the Gradle wrapper'
-    gradleVersion = "6.7"
+    gradleVersion = "6.7.1"
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 allprojects {
     group = 'com.ak'
-    version = '2020.11.05'
+    version = '2020.11.27'
     apply plugin: 'idea'
     idea {
         module {
@@ -65,9 +65,7 @@ dependencies {
     implementation javaxInject
     implementation jSerialComm
     implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 configurations {
