@@ -6,8 +6,8 @@ plugins {
     id "application"
     id 'org.openjfx.javafxplugin' version '0.0.9'
 
-    id 'org.springframework.boot' version '2.4.0'
-    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 ext {
@@ -19,13 +19,13 @@ ext {
 
 wrapper {
     description 'Setup the Gradle wrapper'
-    gradleVersion = "6.7.1"
+    gradleVersion = "6.8"
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 allprojects {
     group = 'com.ak'
-    version = '2020.11.27'
+    version = '2021.01.17'
     apply plugin: 'idea'
     idea {
         module {
