@@ -4,28 +4,28 @@ plugins {
     id 'idea'
 
     id "application"
-    id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
 
-    id 'org.springframework.boot' version '2.4.3'
+    id 'org.springframework.boot' version '2.5.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 ext {
     jsr305 = 'com.google.code.findbugs:jsr305:3.0.2'
     javaxInject = 'javax.inject:javax.inject:1'
-    jSerialComm = 'com.fazecast:jSerialComm:[2.0.0,3.0.0)'
-    javaVersion = JavaVersion.VERSION_15
+    jSerialComm = 'com.fazecast:jSerialComm:[2.7.0,3.0.0)'
+    javaVersion = JavaVersion.VERSION_16
 }
 
 wrapper {
     description 'Setup the Gradle wrapper'
-    gradleVersion = "6.8.3"
+    gradleVersion = "7.2"
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 allprojects {
     group = 'com.ak'
-    version = '2021.03.12'
+    version = '2021.09.04'
     apply plugin: 'idea'
     idea {
         module {
@@ -49,7 +49,6 @@ allprojects {
         maven {
             url = 'https://plugins.gradle.org/m2/'
         }
-        jcenter()
     }
 
     dependencies {
@@ -63,9 +62,9 @@ allprojects {
 
 dependencies {
     implementation javaxInject
-    implementation jSerialComm
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'com.fazecast:jSerialComm:2.7.0'
+    implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
 }
 
 configurations {
@@ -79,7 +78,7 @@ processResources {
 }
 
 javafx {
-    version = '15'
+    version = '16'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 

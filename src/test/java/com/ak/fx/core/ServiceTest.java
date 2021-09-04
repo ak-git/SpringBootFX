@@ -39,7 +39,7 @@ class ServiceTest {
         byte[] buffer = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         comPort.writeBytes(buffer, buffer.length);
         try {
-          latch.await(1, TimeUnit.SECONDS);
+          Assertions.assertFalse(latch.await(1, TimeUnit.SECONDS));
         }
         catch (InterruptedException e) {
           Assertions.fail(comPort.getDescriptivePortName());
