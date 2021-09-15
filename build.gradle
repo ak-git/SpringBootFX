@@ -34,7 +34,7 @@ allprojects {
     }
 
     sourceSets {
-        main.output.resourcesDir = main.java.outputDir
+        main.output.resourcesDir = main.java.classesDirectory
     }
 
     apply plugin: 'java'
@@ -63,8 +63,8 @@ allprojects {
 dependencies {
     implementation javaxInject
     implementation 'com.fazecast:jSerialComm:2.7.0'
-    implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 configurations {
