@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -43,7 +42,7 @@ public class FxApplication extends Application {
             Stream.of(mainStage),
             IntStream.range(1, fxmlLoaders.size()).mapToObj(i -> new Stage(StageStyle.DECORATED))
         )
-        .collect(Collectors.toUnmodifiableList());
+        .toList();
 
     for (int i = 0; i < stages.size(); i++) {
       Stage stage = stages.get(i);
@@ -76,8 +75,7 @@ public class FxApplication extends Application {
           else {
             return new FXMLLoader(fxml, resourceBundle);
           }
-        })
-        .collect(Collectors.toUnmodifiableList());
+        }).toList();
     fxmlLoaders.forEach(fxmlLoader -> fxmlLoader.setControllerFactory(applicationContext::getBean));
     return fxmlLoaders;
   }

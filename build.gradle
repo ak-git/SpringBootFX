@@ -4,9 +4,9 @@ plugins {
     id 'idea'
 
     id "application"
-    id 'org.openjfx.javafxplugin' version '0.0.10'
+    id 'org.openjfx.javafxplugin' version '0.0.11'
 
-    id 'org.springframework.boot' version '2.5.4'
+    id 'org.springframework.boot' version '2.6.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
@@ -14,18 +14,18 @@ ext {
     jsr305 = 'com.google.code.findbugs:jsr305:3.0.2'
     javaxInject = 'javax.inject:javax.inject:1'
     jSerialComm = 'com.fazecast:jSerialComm:[2.7.0,3.0.0)'
-    javaVersion = JavaVersion.VERSION_16
+    javaVersion = JavaVersion.VERSION_17
 }
 
 wrapper {
     description 'Setup the Gradle wrapper'
-    gradleVersion = "7.2"
+    gradleVersion = "7.3.3"
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 allprojects {
     group = 'com.ak'
-    version = '2021.09.04'
+    version = '2022.02.03'
     apply plugin: 'idea'
     idea {
         module {
