@@ -5,6 +5,7 @@ plugins {
 
     id "application"
     id 'org.openjfx.javafxplugin' version '0.0.11'
+    id 'org.beryx.jlink' version '2.24.4'
 
     id 'org.springframework.boot' version '2.6.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -82,4 +83,11 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
-mainClassName = "com.ak.fx.desktop.FxApplication"
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'com.ak.fx.desktop'
+    }
+}
+
+mainClassName = "${moduleName}/com.ak.fx.desktop.FxApplication"
