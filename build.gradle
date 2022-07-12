@@ -4,29 +4,29 @@ plugins {
     id 'idea'
 
     id "application"
-    id 'org.openjfx.javafxplugin' version '0.0.11'
-    id 'org.beryx.jlink' version '2.24.4'
+    id 'org.openjfx.javafxplugin' version '0.0.12'
+    id 'org.beryx.jlink' version '2.25.0'
 
-    id 'org.springframework.boot' version '2.6.3'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '2.7.1'
+    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
 }
 
 ext {
     jsr305 = 'com.google.code.findbugs:jsr305:3.0.2'
     javaxInject = 'javax.inject:javax.inject:1'
     jSerialComm = 'com.fazecast:jSerialComm:[2.7.0,3.0.0)'
-    javaVersion = JavaVersion.VERSION_17
+    javaVersion = JavaVersion.VERSION_18
 }
 
 wrapper {
     description 'Setup the Gradle wrapper'
-    gradleVersion = "7.3.3"
+    gradleVersion = "7.4.2"
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 allprojects {
     group = 'com.ak'
-    version = '2022.02.03'
+    version = '2022.07.12'
     apply plugin: 'idea'
     idea {
         module {
@@ -63,7 +63,7 @@ allprojects {
 
 dependencies {
     implementation javaxInject
-    implementation 'com.fazecast:jSerialComm:2.7.0'
+    implementation jSerialComm
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
@@ -79,7 +79,7 @@ processResources {
 }
 
 javafx {
-    version = '17.0.2'
+    version = '18.0.1'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
