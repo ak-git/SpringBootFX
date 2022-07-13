@@ -2,11 +2,10 @@ plugins {
     id 'java'
     id 'java-library'
     id 'idea'
-
     id "application"
+    id "org.javamodularity.moduleplugin" version '1.8.11'
     id 'org.openjfx.javafxplugin' version '0.0.12'
-    id 'org.beryx.jlink' version '2.25.0'
-
+    id "com.github.spotbugs" version '5.0.8'
     id 'org.springframework.boot' version '2.7.1'
     id 'io.spring.dependency-management' version '1.0.12.RELEASE'
 }
@@ -57,7 +56,9 @@ allprojects {
     }
 
     test {
+        forkEvery = 5
         useJUnitPlatform()
+        maxHeapSize = '1G'
     }
 }
 
@@ -71,6 +72,7 @@ dependencies {
 configurations {
     all {
         exclude group: 'jakarta.annotation', module: 'jakarta.annotation-api'
+        exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
 }
 
@@ -83,11 +85,7 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
-jlink {
-    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
-    launcher {
-        name = 'com.ak.fx.desktop'
-    }
+application {
+    mainModule = 'com.ak.fx.desktop'
+    mainClass = 'com.ak.fx.desktop.FxApplication'
 }
-
-mainClassName = "${moduleName}/com.ak.fx.desktop.FxApplication"
