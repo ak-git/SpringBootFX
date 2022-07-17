@@ -4,8 +4,8 @@ plugins {
     id 'idea'
     id "application"
     id "org.javamodularity.moduleplugin" version '1.8.11'
-    id 'org.openjfx.javafxplugin' version '0.0.12'
-    id "com.github.spotbugs" version '5.0.8'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id "com.github.spotbugs" version '5.0.9'
     id 'org.springframework.boot' version '2.7.1'
     id 'io.spring.dependency-management' version '1.0.12.RELEASE'
 }
@@ -19,13 +19,13 @@ ext {
 
 wrapper {
     description 'Setup the Gradle wrapper'
-    gradleVersion = "7.4.2"
+    gradleVersion = "7.5"
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 allprojects {
     group = 'com.ak'
-    version = '2022.07.12'
+    version = '2022.07.17'
     apply plugin: 'idea'
     idea {
         module {
@@ -56,8 +56,11 @@ allprojects {
     }
 
     test {
-        forkEvery = 5
         useJUnitPlatform()
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+        forkEvery = 5
         maxHeapSize = '1G'
     }
 }
