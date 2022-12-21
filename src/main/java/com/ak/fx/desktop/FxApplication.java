@@ -76,7 +76,7 @@ public class FxApplication extends Application {
             return new FXMLLoader(fxml, resourceBundle);
           }
         }).toList();
-    fxmlLoaders.forEach(fxmlLoader -> fxmlLoader.setControllerFactory(applicationContext::getBean));
+    fxmlLoaders.forEach(fxmlLoader -> fxmlLoader.setControllerFactory(requiredType -> applicationContext.getBean(requiredType)));
     return fxmlLoaders;
   }
 }

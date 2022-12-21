@@ -5,27 +5,27 @@ plugins {
     id "application"
     id "org.javamodularity.moduleplugin" version '1.8.12'
     id 'org.openjfx.javafxplugin' version '0.0.13'
-    id "com.github.spotbugs" version '5.0.9'
-    id 'org.springframework.boot' version '2.7.2'
-    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+    id "com.github.spotbugs" version '5.0.13'
+    id 'org.springframework.boot' version '3.0.0'
+    id 'io.spring.dependency-management' version '1.1.0'
 }
 
 ext {
     jsr305 = 'com.google.code.findbugs:jsr305:3.0.2'
     javaxInject = 'javax.inject:javax.inject:1'
     jSerialComm = 'com.fazecast:jSerialComm:[2.7.0,3.0.0)'
-    javaVersion = JavaVersion.VERSION_18
+    javaVersion = JavaVersion.VERSION_19
 }
 
 wrapper {
     description 'Setup the Gradle wrapper'
-    gradleVersion = "7.5.1"
+    gradleVersion = "7.6"
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 allprojects {
     group = 'com.ak'
-    version = '2022.08.13'
+    version = '2022.12.21'
     apply plugin: 'idea'
     idea {
         module {
@@ -73,7 +73,7 @@ dependencies {
 }
 
 configurations {
-    all {
+    configureEach {
         exclude group: 'jakarta.annotation', module: 'jakarta.annotation-api'
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
@@ -84,7 +84,7 @@ processResources {
 }
 
 javafx {
-    version = '18.0.2'
+    version = '19'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 

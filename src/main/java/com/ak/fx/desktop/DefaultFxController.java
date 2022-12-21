@@ -4,15 +4,15 @@ import java.util.logging.Logger;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.inject.Provider;
 
 import com.ak.fx.core.Service;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
-@Named
+@Component
 @Profile("default")
 public final class DefaultFxController extends AbstractFxController {
   @FXML
