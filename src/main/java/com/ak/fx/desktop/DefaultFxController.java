@@ -3,10 +3,10 @@ package com.ak.fx.desktop;
 import java.util.logging.Logger;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javax.inject.Provider;
 
 import com.ak.fx.core.Service;
+import jakarta.inject.Inject;
+import jakarta.inject.Provider;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.springframework.context.annotation.Profile;

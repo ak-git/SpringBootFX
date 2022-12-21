@@ -12,7 +12,7 @@ plugins {
 
 ext {
     jsr305 = 'com.google.code.findbugs:jsr305:3.0.2'
-    javaxInject = 'javax.inject:javax.inject:1'
+    javaxInject = 'jakarta.inject:jakarta.inject-api:2.0.1.MR'
     jSerialComm = 'com.fazecast:jSerialComm:[2.7.0,3.0.0)'
     javaVersion = JavaVersion.VERSION_19
 }

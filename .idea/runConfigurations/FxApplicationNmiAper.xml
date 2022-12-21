@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="FxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <configuration default="false" name="FxApplicationNmiAper" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" value="nmi, aper" />
     <module name="SpringBootFX.main" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.ak.fx.desktop.FxApplication" />
     <method v="2">

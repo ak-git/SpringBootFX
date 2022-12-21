@@ -1,5 +1,5 @@
 module com.ak.fx.desktop {
-  requires javax.inject;
+  requires jakarta.inject;
   requires java.logging;
   requires jsr305;
   requires javafx.fxml;
