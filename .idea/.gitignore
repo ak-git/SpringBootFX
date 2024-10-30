@@ -9,5 +9,6 @@ sonarlint-state.xml
 /rSettings.xml
 /workspace.xml
 /modules.xml
+/csv-plugin.xml
 /libraries/*
 *.iml

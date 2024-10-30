@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="FxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-    <module name="SpringBootFX.main" />
+  <configuration default="false" name="FxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="SpringBootFX.spring.main" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.ak.fx.desktop.FxApplication" />
     <method v="2">
       <option name="Make" enabled="true" />

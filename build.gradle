@@ -1,33 +1,40 @@
+import com.github.spotbugs.snom.Confidence
+
 plugins {
     id 'java'
-    id 'java-library'
     id 'idea'
-    id "application"
-    id "org.javamodularity.moduleplugin" version '1.8.12'
-    id 'org.openjfx.javafxplugin' version '0.0.13'
-    id "com.github.spotbugs" version '5.0.14'
-    id 'org.springframework.boot' version '3.0.5'
-    id 'io.spring.dependency-management' version '1.1.0'
-    id "com.github.ben-manes.versions" version "0.46.0"
-    id "nebula.lint" version "18.0.3"
+    id 'jacoco'
+    alias(libs.plugins.spotbugs)
+    alias(libs.plugins.ben.manes.versions)
+    alias(libs.plugins.nebula.lint)
+    alias(libs.plugins.sonarqube)
+    alias(libs.plugins.jacocolog)
+    alias(libs.plugins.jgitver)
 }
 
-ext {
-    jsr305 = 'com.google.code.findbugs:jsr305:3.0.2'
-    javaxInject = 'jakarta.inject:jakarta.inject-api:2.0.1'
-    jSerialComm = 'com.fazecast:jSerialComm:[2.7.0,3.0.0)'
-    javaVersion = JavaVersion.VERSION_19
+spotbugs {
+    reportLevel = Confidence.valueOf('HIGH')
 }
 
-wrapper {
-    description 'Setup the Gradle wrapper'
-    gradleVersion = "8.0.2"
-    distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
+tasks.spotbugsMain {
+    reports.create('html') {
+        required = true
+        setStylesheet('fancy-hist.xsl')
+    }
+}
+
+sonar {
+    properties {
+        property 'sonar.projectKey', property('sonar.projectKey')
+        property 'sonar.organization', property('sonar.organization')
+        property 'sonar.host.url', 'https://sonarcloud.io'
+        property 'sonar.branch.name', 'master'
+        property 'sonar.coverage.jacoco.xmlReportPaths', 'build/reports/jacoco/jacocoAggregatedReport/jacocoAggregatedReport.xml'
+    }
 }
 
 allprojects {
     group = 'com.ak'
-    version = '2023.04.10'
     apply plugin: 'idea'
     idea {
         module {
@@ -39,58 +46,44 @@ allprojects {
         main.output.resourcesDir = main.java.classesDirectory
     }
 
+    apply plugin: 'jacoco'
+    apply plugin: 'org.barfuin.gradle.jacocolog'
+
+    jacoco {
+        toolVersion = '0.8.12'
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.required = true
+        }
+    }
+}
+
+subprojects {
     apply plugin: 'java'
-    apply plugin: 'java-library'
 
-    sourceCompatibility = javaVersion
-    targetCompatibility = javaVersion
-
-    repositories {
-        mavenCentral()
-        mavenLocal()
-        maven {
-            url = 'https://plugins.gradle.org/m2/'
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(22)
         }
     }
 
-    dependencies {
-        implementation jsr305
+    compileJava {
+        options.encoding = 'UTF-8'
+        options.compilerArgs << '-parameters'
+    }
+
+    compileTestJava {
+        options.encoding = 'UTF-8'
     }
 
     test {
+        forkEvery = 5
         useJUnitPlatform()
         testLogging {
-            events "passed", "skipped", "failed"
+            events 'passed', 'skipped', 'failed'
         }
-        forkEvery = 5
         maxHeapSize = '1G'
     }
-}
-
-dependencies {
-    implementation javaxInject
-    implementation jSerialComm
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-configurations {
-    configureEach {
-        exclude group: 'jakarta.annotation', module: 'jakarta.annotation-api'
-        exclude group: 'com.vaadin.external.google', module: 'android-json'
-    }
-}
-
-processResources {
-    expand(project.properties)
-}
-
-javafx {
-    version = '19.0.2'
-    modules = ['javafx.controls', 'javafx.fxml']
-}
-
-application {
-    mainModule = 'com.ak.fx.desktop'
-    mainClass = 'com.ak.fx.desktop.FxApplication'
 }

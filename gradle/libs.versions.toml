@@ -1,0 +1,64 @@
+[versions]
+javamodularity-moduleplugin = '1.8.15'
+sonarqube = '5.1.0.4882'
+jacocolog = '3.1.0'
+spotbugs = '6.0.25'
+ben-manes-versions = '0.51.0'
+nebula-lint = '20.2.0'
+jgitver = '0.10.0-rc03'
+
+jspecify = '1.0.0'
+assertj = '3.26.3'
+
+javafxplugin = '0.1.0'
+jserial-comm = '2.11.0'
+
+spring = '6.1.14'
+springframework-boot = '3.3.5'
+spring-dependency-management = '1.1.6'
+
+javafx = '24-ea+15'
+
+inject-api = '2.0.1'
+
+[plugins]
+javamodularity-moduleplugin = { id = 'org.javamodularity.moduleplugin', version.ref = 'javamodularity-moduleplugin' }
+sonarqube = { id = 'org.sonarqube', version.ref = 'sonarqube' }
+jacocolog = { id = 'org.barfuin.gradle.jacocolog', version.ref = 'jacocolog' }
+spotbugs = { id = 'com.github.spotbugs', version.ref = 'spotbugs' }
+ben-manes-versions = { id = 'com.github.ben-manes.versions', version.ref = 'ben-manes-versions' }
+nebula-lint = { id = 'nebula.lint', version.ref = 'nebula-lint' }
+jgitver = { id = 'fr.brouillard.oss.gradle.jgitver', version.ref = 'jgitver' }
+
+javafxplugin = { id = 'org.openjfx.javafxplugin', version.ref = 'javafxplugin' }
+springframework-boot = { id = 'org.springframework.boot', version.ref = 'springframework-boot' }
+spring-dependency-management = { id = 'io.spring.dependency-management', version.ref = 'spring-dependency-management' }
+
+[libraries]
+jspecify = { module = 'org.jspecify:jspecify', version.ref = 'jspecify' }
+
+junit-jupiter = { module = 'org.junit.jupiter:junit-jupiter' }
+junit-jupiter-api = { module = 'org.junit.jupiter:junit-jupiter-api' }
+junit-jupiter-engine = { module = 'org.junit.jupiter:junit-jupiter-engine' }
+junit-platform-launcher = { module = 'org.junit.platform:junit-platform-launcher' }
+assertj = { module = 'org.assertj:assertj-core', version.ref = 'assertj' }
+
+javafx-base = { module = 'org.openjfx:javafx-base', version.ref = 'javafx' }
+javafx-graphics = { module = 'org.openjfx:javafx-graphics', version.ref = 'javafx' }
+jserial-comm = { module = 'com.fazecast:jSerialComm', version.ref = 'jserial-comm' }
+
+spring-bom = { module = 'org.springframework:spring-framework-bom', version.ref = 'spring' }
+spring-boot = { module = 'org.springframework.boot:spring-boot' }
+spring-boot-autoconfigure = { module = 'org.springframework.boot:spring-boot-autoconfigure' }
+spring-core = { module = 'org.springframework:spring-core' }
+spring-beans = { module = 'org.springframework:spring-beans' }
+spring-context = { module = 'org.springframework:spring-context' }
+
+inject-api = { module = 'jakarta.inject:jakarta.inject-api', version.ref = 'inject-api' }
+
+[bundles]
+spring-boot = ['spring-boot', 'spring-boot-autoconfigure', 'spring-core', 'spring-beans', 'spring-context']
+
+test-implementation = ['junit-jupiter-api', 'assertj']
+test-compile = ['junit-jupiter', 'junit-jupiter-engine']
+test-runtime = ['junit-jupiter-engine', 'junit-platform-launcher']

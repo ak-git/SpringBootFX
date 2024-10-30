@@ -1,0 +1,40 @@
+plugins {
+    id 'application'
+    alias(libs.plugins.javamodularity.moduleplugin)
+    alias(libs.plugins.javafxplugin)
+    alias(libs.plugins.springframework.boot)
+    alias(libs.plugins.spring.dependency.management)
+}
+
+dependencies {
+    implementation libs.jspecify
+    implementation libs.jserial.comm
+
+    implementation(platform(libs.spring.bom))
+    implementation libs.bundles.spring.boot
+
+    implementation libs.javafx.base
+    implementation libs.javafx.graphics
+
+    implementation libs.inject.api
+
+    testImplementation 'org.springframework.boot:spring-boot-test'
+    testImplementation libs.bundles.test.implementation
+    testCompileOnly libs.bundles.test.compile
+    testRuntimeOnly libs.bundles.test.runtime
+}
+
+javafx {
+    version = '24-ea+15'
+    modules = ['javafx.controls', 'javafx.fxml']
+    configurations = ['implementation']
+}
+
+processResources {
+    expand(project.properties)
+}
+
+application {
+    mainModule = 'com.ak.fx.desktop'
+    mainClass = 'com.ak.fx.desktop.FxApplication'
+}

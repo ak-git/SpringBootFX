@@ -1,4 +1,37 @@
-# Project exclude paths
-/.gradle/
-/build/
-/out/
+# Gradle
+.gradle/
+build/
+out/
+*/build/*
+*/out/*
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode
+.factorypath
+
+# OSX
+.DS_Store
+profile
+
+# Vim
+*.swp
+*.swo
+
+# patch
+*.orig
+*.rej
+
+# Local environment
+.env
+
+# TLS Certificates
+.certs/

@@ -22,29 +22,14 @@
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="Spring rich client repository" />
-      <option name="name" value="Spring rich client repository" />
-      <option name="url" value="http://spring-rich-c.sourceforge.net/maven2repository" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="MavenLocal" />
       <option name="name" value="MavenLocal" />
       <option name="url" value="file:$MAVEN_REPOSITORY$/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="Apache Repository" />
-      <option name="name" value="Apache Repository" />
-      <option name="url" value="https://repository.apache.org/content/repositories/snapshots/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="BintrayJCenter" />
-      <option name="name" value="BintrayJCenter" />
-      <option name="url" value="https://jcenter.bintray.com/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="MavenLocal" />
-      <option name="name" value="MavenLocal" />
-      <option name="url" value="file:$MAVEN_REPOSITORY$" />
+      <option name="id" value="Gradle Central Plugin Repository" />
+      <option name="name" value="Gradle Central Plugin Repository" />
+      <option name="url" value="https://plugins.gradle.org/m2" />
     </remote-repository>
   </component>
 </project>
