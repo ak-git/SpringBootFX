@@ -8,6 +8,8 @@ nebula-lint = '20.2.2'
 jgitver = '0.10.0-rc03'
 
 jspecify = '1.0.0'
+junit = '5.11.3'
+junit-platform-launcher = '1.11.3'
 assertj = '3.26.3'
 
 javafxplugin = '0.1.0'
@@ -37,10 +39,11 @@ spring-dependency-management = { id = 'io.spring.dependency-management', version
 [libraries]
 jspecify = { module = 'org.jspecify:jspecify', version.ref = 'jspecify' }
 
-junit-jupiter = { module = 'org.junit.jupiter:junit-jupiter' }
-junit-jupiter-api = { module = 'org.junit.jupiter:junit-jupiter-api' }
-junit-jupiter-engine = { module = 'org.junit.jupiter:junit-jupiter-engine' }
-junit-platform-launcher = { module = 'org.junit.platform:junit-platform-launcher' }
+junit = { module = 'org.junit:junit-bom', version.ref = 'junit' }
+junit-jupiter = { module = 'org.junit.jupiter:junit-jupiter', version.ref = 'junit' }
+junit-jupiter-api = { module = 'org.junit.jupiter:junit-jupiter-api', version.ref = 'junit' }
+junit-jupiter-engine = { module = 'org.junit.jupiter:junit-jupiter-engine', version.ref = 'junit' }
+junit-platform-launcher = { module = 'org.junit.platform:junit-platform-launcher', version.ref = 'junit-platform-launcher' }
 assertj = { module = 'org.assertj:assertj-core', version.ref = 'assertj' }
 
 javafx-base = { module = 'org.openjfx:javafx-base', version.ref = 'javafx' }

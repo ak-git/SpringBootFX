@@ -3,7 +3,7 @@ package com.ak.fx.core;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortDataListener;
 import com.fazecast.jSerialComm.SerialPortEvent;
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -39,7 +39,7 @@ class ServiceTest {
         byte[] buffer = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         comPort.writeBytes(buffer, buffer.length);
         try {
-          Assertions.assertFalse(latch.await(1, TimeUnit.SECONDS));
+          Assertions.assertThat(latch.await(1, TimeUnit.SECONDS)).isFalse();
         }
         catch (InterruptedException e) {
           Assertions.fail(comPort.getDescriptivePortName());

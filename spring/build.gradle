@@ -18,10 +18,11 @@ dependencies {
 
     implementation libs.inject.api
 
-    testImplementation 'org.springframework.boot:spring-boot-test'
-    testImplementation libs.bundles.test.implementation
-    testCompileOnly libs.bundles.test.compile
-    testRuntimeOnly libs.bundles.test.runtime
+    testImplementation(platform(libs.junit))
+    testImplementation libs.junit.jupiter.api
+    testImplementation libs.assertj
+    testRuntimeOnly libs.junit.jupiter
+    testRuntimeOnly libs.junit.platform.launcher
 }
 
 javafx {
