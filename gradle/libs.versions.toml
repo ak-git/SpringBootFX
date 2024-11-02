@@ -2,7 +2,7 @@
 javamodularity-moduleplugin = '1.8.15'
 sonarqube = '5.1.0.4882'
 jacocolog = '3.1.0'
-spotbugs = '6.0.25'
+spotbugs = '6.0.26'
 ben-manes-versions = '0.51.0'
 nebula-lint = '20.2.2'
 jgitver = '0.10.0-rc03'
