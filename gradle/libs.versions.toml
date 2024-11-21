@@ -16,7 +16,7 @@ javafxplugin = '0.1.0'
 jserial-comm = '2.11.0'
 
 spring = '6.2.0'
-springframework-boot = '3.3.5'
+springframework-boot = '3.3.6'
 spring-dependency-management = '1.1.6'
 
 javafx = '24-ea+15'
