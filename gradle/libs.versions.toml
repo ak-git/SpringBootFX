@@ -1,6 +1,6 @@
 [versions]
 javamodularity-moduleplugin = '1.8.15'
-sonarqube = '6.0.0.5145'
+sonarqube = '6.0.1.5171'
 jacocolog = '3.1.0'
 spotbugs = '6.0.26'
 ben-manes-versions = '0.51.0'
