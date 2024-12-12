@@ -15,7 +15,7 @@ assertj = '3.26.3'
 javafxplugin = '0.1.0'
 jserial-comm = '2.11.0'
 
-spring = '6.2.0'
+spring = '6.2.1'
 springframework-boot = '3.4.0'
 spring-dependency-management = '1.1.6'
 
