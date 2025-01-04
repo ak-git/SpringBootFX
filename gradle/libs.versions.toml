@@ -10,7 +10,7 @@ jgitver = '0.10.0-rc03'
 jspecify = '1.0.0'
 junit = '5.11.4'
 junit-platform-launcher = '1.11.4'
-assertj = '3.27.1'
+assertj = '3.27.2'
 
 javafxplugin = '0.1.0'
 jserial-comm = '2.11.0'
