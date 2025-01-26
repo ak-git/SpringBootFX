@@ -19,7 +19,7 @@ spring = '6.2.2'
 springframework-boot = '3.4.2'
 spring-dependency-management = '1.1.7'
 
-javafx = '24-ea+25'
+javafx = '25-ea+1'
 
 inject-api = '2.0.1'
 
@@ -42,7 +42,6 @@ jspecify = { module = 'org.jspecify:jspecify', version.ref = 'jspecify' }
 junit = { module = 'org.junit:junit-bom', version.ref = 'junit' }
 junit-jupiter = { module = 'org.junit.jupiter:junit-jupiter', version.ref = 'junit' }
 junit-jupiter-api = { module = 'org.junit.jupiter:junit-jupiter-api', version.ref = 'junit' }
-junit-jupiter-engine = { module = 'org.junit.jupiter:junit-jupiter-engine', version.ref = 'junit' }
 junit-platform-launcher = { module = 'org.junit.platform:junit-platform-launcher', version.ref = 'junit-platform-launcher' }
 assertj = { module = 'org.assertj:assertj-core', version.ref = 'assertj' }
 
@@ -61,7 +60,3 @@ inject-api = { module = 'jakarta.inject:jakarta.inject-api', version.ref = 'inje
 
 [bundles]
 spring-boot = ['spring-boot', 'spring-boot-autoconfigure', 'spring-core', 'spring-beans', 'spring-context']
-
-test-implementation = ['junit-jupiter-api', 'assertj']
-test-compile = ['junit-jupiter', 'junit-jupiter-engine']
-test-runtime = ['junit-jupiter-engine', 'junit-platform-launcher']
