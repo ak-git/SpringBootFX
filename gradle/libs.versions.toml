@@ -1,5 +1,4 @@
 [versions]
-javamodularity-moduleplugin = '1.8.15'
 sonarqube = '6.0.1.5171'
 jacocolog = '3.1.0'
 spotbugs = '6.1.6'
@@ -8,8 +7,6 @@ nebula-lint = '20.5.6'
 jgitver = '0.10.0-rc03'
 
 jspecify = '1.0.0'
-junit = '5.12.0'
-junit-platform-launcher = '1.12.0'
 assertj = '3.27.3'
 
 javafxplugin = '0.1.0'
@@ -24,7 +21,6 @@ javafx = '25-ea+6'
 inject-api = '2.0.1'
 
 [plugins]
-javamodularity-moduleplugin = { id = 'org.javamodularity.moduleplugin', version.ref = 'javamodularity-moduleplugin' }
 sonarqube = { id = 'org.sonarqube', version.ref = 'sonarqube' }
 jacocolog = { id = 'org.barfuin.gradle.jacocolog', version.ref = 'jacocolog' }
 spotbugs = { id = 'com.github.spotbugs', version.ref = 'spotbugs' }
@@ -39,10 +35,9 @@ spring-dependency-management = { id = 'io.spring.dependency-management', version
 [libraries]
 jspecify = { module = 'org.jspecify:jspecify', version.ref = 'jspecify' }
 
-junit = { module = 'org.junit:junit-bom', version.ref = 'junit' }
-junit-jupiter = { module = 'org.junit.jupiter:junit-jupiter', version.ref = 'junit' }
-junit-jupiter-api = { module = 'org.junit.jupiter:junit-jupiter-api', version.ref = 'junit' }
-junit-platform-launcher = { module = 'org.junit.platform:junit-platform-launcher', version.ref = 'junit-platform-launcher' }
+junit-jupiter = { module = 'org.junit.jupiter:junit-jupiter' }
+junit-jupiter-api = { module = 'org.junit.jupiter:junit-jupiter-api' }
+junit-platform-launcher = { module = 'org.junit.platform:junit-platform-launcher' }
 assertj = { module = 'org.assertj:assertj-core', version.ref = 'assertj' }
 
 javafx-base = { module = 'org.openjfx:javafx-base', version.ref = 'javafx' }
