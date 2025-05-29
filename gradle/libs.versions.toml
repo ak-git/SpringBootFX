@@ -3,7 +3,7 @@ sonarqube = '6.2.0.5505'
 jacocolog = '3.1.0'
 spotbugs = '6.1.13'
 ben-manes-versions = '0.52.0'
-nebula-lint = '20.5.8'
+nebula-lint = '20.6.0'
 jgitver = '0.10.0-rc03'
 
 jspecify = '1.0.0'
