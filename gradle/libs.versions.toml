@@ -10,7 +10,7 @@ jspecify = '1.0.0'
 assertj = '3.27.3'
 
 javafxplugin = '0.1.0'
-jserial-comm = '2.11.0'
+jserial-comm = '2.11.2'
 
 spring = '6.2.8'
 springframework-boot = '3.5.3'
