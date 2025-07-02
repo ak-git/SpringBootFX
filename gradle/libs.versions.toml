@@ -3,7 +3,6 @@ sonarqube = '6.2.0.5505'
 jacocolog = '3.1.0'
 spotbugs = '6.2.1'
 ben-manes-versions = '0.52.0'
-nebula-lint = '21.0.0'
 jgitver = '0.10.0-rc03'
 
 jspecify = '1.0.0'
@@ -25,7 +24,6 @@ sonarqube = { id = 'org.sonarqube', version.ref = 'sonarqube' }
 jacocolog = { id = 'org.barfuin.gradle.jacocolog', version.ref = 'jacocolog' }
 spotbugs = { id = 'com.github.spotbugs', version.ref = 'spotbugs' }
 ben-manes-versions = { id = 'com.github.ben-manes.versions', version.ref = 'ben-manes-versions' }
-nebula-lint = { id = 'nebula.lint', version.ref = 'nebula-lint' }
 jgitver = { id = 'fr.brouillard.oss.gradle.jgitver', version.ref = 'jgitver' }
 
 javafxplugin = { id = 'org.openjfx.javafxplugin', version.ref = 'javafxplugin' }
