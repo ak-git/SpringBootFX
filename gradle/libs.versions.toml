@@ -1,7 +1,7 @@
 [versions]
 sonarqube = '6.2.0.5505'
 jacocolog = '3.1.0'
-spotbugs = '6.2.2'
+spotbugs = '6.2.3'
 ben-manes-versions = '0.52.0'
 jgitver = '0.10.0-rc03'
 
