@@ -2,6 +2,7 @@
   <configuration default="false" name="FxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
     <module name="SpringBootFX.spring.main" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.ak.fx.desktop.FxApplication" />
+    <option name="VM_PARAMETERS" value="--enable-native-access=javafx.graphics" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

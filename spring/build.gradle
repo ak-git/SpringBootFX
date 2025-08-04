@@ -36,4 +36,9 @@ processResources {
 application {
     mainModule = 'com.ak.fx.desktop'
     mainClass = 'com.ak.fx.desktop.FxApplication'
+
+    applicationDefaultJvmArgs = [
+            '--add-opens', 'java.base/jdk.internal.module=ALL-UNNAMED',
+            '--enable-native-access', 'javafx.graphics'
+    ]
 }
