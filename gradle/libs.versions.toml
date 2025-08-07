@@ -5,7 +5,7 @@ ben-manes-versions = '0.52.0'
 jgitver = '0.10.0-rc03'
 
 jspecify = '1.0.0'
-assertj = '3.27.3'
+assertj = '3.27.4'
 
 javafxplugin = '0.1.0'
 jserial-comm = '2.11.2'
