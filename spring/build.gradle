@@ -24,7 +24,7 @@ dependencies {
 }
 
 javafx {
-    version = '26-ea+2'
+    version = '26-ea+3'
     modules = ['javafx.controls', 'javafx.fxml']
     configurations = ['implementation']
 }
@@ -38,7 +38,6 @@ application {
     mainClass = 'com.ak.fx.desktop.FxApplication'
 
     applicationDefaultJvmArgs = [
-            '--add-opens', 'java.base/jdk.internal.module=ALL-UNNAMED',
             '--enable-native-access', 'javafx.graphics'
     ]
 }
