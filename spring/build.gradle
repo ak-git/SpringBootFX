@@ -33,6 +33,10 @@ processResources {
     expand(project.properties)
 }
 
+tasks.withType(Test).configureEach {
+    jvmArgs('--enable-native-access=ALL-UNNAMED')
+}
+
 application {
     mainModule = 'com.ak.fx.desktop'
     mainClass = 'com.ak.fx.desktop.FxApplication'
