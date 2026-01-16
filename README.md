@@ -43,7 +43,7 @@ Output zip with single JAR appears after Gradle build task:
 ### Update version and add git tag
 
 ```shell
-git tag 2025.04
+git tag 2026.01
 ```
 
 ## Update dependencies
