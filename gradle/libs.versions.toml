@@ -1,5 +1,5 @@
 [versions]
-jacocolog = '4.0.0'
+jacocolog = '4.0.1'
 spotbugs = '6.4.8'
 ben-manes-versions = '0.53.0'
 jgitver = '0.10.0-rc03'
