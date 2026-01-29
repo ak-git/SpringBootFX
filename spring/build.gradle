@@ -43,14 +43,11 @@ tasks.withType(JavaExec).configureEach {
 }
 
 tasks.named('run') {
-    jvmArgs = ["--enable-native-access=javafx.graphics"]
+    jvmArgs = ['--enable-native-access=javafx.graphics']
 }
 
 application {
     mainModule = 'com.ak.fx.desktop'
     mainClass = 'com.ak.fx.desktop.FxApplication'
-
-    applicationDefaultJvmArgs = [
-            '--enable-native-access', 'javafx.graphics'
-    ]
+    applicationDefaultJvmArgs = ['--enable-native-access=javafx.graphics']
 }
