@@ -9,7 +9,7 @@ module com.ak.fx.desktop {
   requires spring.core;
   requires spring.beans;
   requires com.fazecast.jSerialComm;
-  requires org.jspecify;
+  requires static org.jspecify;
   requires jakarta.inject;
 
   opens com.ak.fx.core to spring.core;

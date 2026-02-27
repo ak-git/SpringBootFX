@@ -6,12 +6,12 @@ plugins {
 }
 
 dependencies {
-    implementation libs.jspecify
+    compileOnly libs.jspecify
     implementation libs.jserial.comm
 
     implementation(platform(libs.spring.bom))
     implementation libs.bundles.spring.boot
-    implementation("org.springframework:spring-jcl:6.2.16")
+    runtimeOnly 'org.springframework:spring-jcl:6.2.16'
 
     implementation libs.javafx.base
     implementation libs.javafx.graphics
