@@ -11,7 +11,7 @@ dependencies {
 
     implementation(platform(libs.spring.bom))
     implementation libs.bundles.spring.boot
-    runtimeOnly 'org.springframework:spring-jcl:6.2.16'
+    runtimeOnly 'org.springframework:spring-jcl:6.2.17'
 
     implementation libs.javafx.base
     implementation libs.javafx.graphics
