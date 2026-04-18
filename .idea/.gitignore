@@ -12,3 +12,4 @@ sonarlint-state.xml
 /csv-plugin.xml
 /libraries/*
 *.iml
+jmix-project.xml
