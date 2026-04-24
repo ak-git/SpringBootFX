@@ -14,7 +14,7 @@ spring = '7.0.7'
 springframework-boot = '4.0.6'
 spring-dependency-management = '1.1.7'
 
-javafx = '27-ea+13'
+javafx = '27-ea+14'
 
 inject-api = '2.0.1'
 
