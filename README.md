@@ -30,20 +30,22 @@ Output zip with single JAR appears after Gradle build task:
 
 ## [Semantic versioning](https://zoltanaltfatter.com/2020/04/10/semantic-versioning-with-jgitver/)
 
-### Plugin [fr.brouillard.oss.gradle.jgitver](https://github.com/jgitver/gradle-jgitver-plugin)
+### Plugin [com.github.jmongard.git-semver-plugin](https://github.com/jmongard/Git.SemVersioning.Gradle)
 
 ```shell
-./gradlew version
+gradle printVersion
 ```
 
+### Update version
+
 ```shell
-./gradlew version | grep Version | awk '{ print $2 }'
+gradle releaseVersion
 ```
 
-### Update version and add git tag
+### Add git tag
 
 ```shell
-git tag 2026.01
+git tag 2026.04
 ```
 
 ## Update dependencies
