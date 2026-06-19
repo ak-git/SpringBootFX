@@ -30,10 +30,6 @@ javafx {
     configurations = ['implementation']
 }
 
-processResources {
-    expand(project.properties)
-}
-
 tasks.withType(Test).configureEach {
     jvmArgs('--enable-native-access=ALL-UNNAMED')
 }
