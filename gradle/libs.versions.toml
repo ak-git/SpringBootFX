@@ -2,7 +2,7 @@
 jacocolog = '4.0.2'
 spotbugs = '6.5.9'
 ben-manes-versions = '0.57.0'
-git-semver = '0.19.5'
+git-semver = '1.21.2'
 
 jspecify = '1.0.1'
 assertj = '3.27.7'
@@ -21,8 +21,8 @@ inject-api = '2.0.1'
 [plugins]
 jacocolog = { id = 'org.barfuin.gradle.jacocolog', version.ref = 'jacocolog' }
 spotbugs = { id = 'com.github.spotbugs', version.ref = 'spotbugs' }
-ben-manes-versions = { id = 'com.github.ben-manes.versions', version.ref = 'ben-manes-versions' }
-git-semver = { id = 'com.github.jmongard.git-semver-plugin', version.ref = 'git-semver' }
+ben-manes-versions = { id = 'io.github.ben-manes.versions', version.ref = 'ben-manes-versions' }
+git-semver = { id = 'pl.allegro.tech.build.axion-release', version.ref = 'git-semver' }
 
 javafxplugin = { id = 'org.openjfx.javafxplugin', version.ref = 'javafxplugin' }
 springframework-boot = { id = 'org.springframework.boot', version.ref = 'springframework-boot' }

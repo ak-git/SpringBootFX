@@ -25,7 +25,7 @@ allprojects {
     group = 'com.ak'
     apply plugin: 'idea'
 
-    version = semver.version
+    version = scmVersion.version
 
     idea {
         module {
