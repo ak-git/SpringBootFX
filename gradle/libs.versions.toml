@@ -1,7 +1,7 @@
 [versions]
 jacocolog = '4.0.2'
 spotbugs = '6.5.10'
-ben-manes-versions = '0.59.0'
+ben-manes-versions = '0.60.0'
 git-semver = '1.21.3'
 
 jspecify = '1.0.1'
